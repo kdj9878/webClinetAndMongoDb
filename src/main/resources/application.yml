@@ -1,0 +1,13 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/local
+      
+movie:
+  openApi:
+    trending:
+      uri: https://api.themoviedb.org/3
+    apiKey : cbfa45007409cc068286bfeafd12a530
+    
+    
+    
