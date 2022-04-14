@@ -1,8 +1,12 @@
 spring:
   data:
     mongodb:
-      uri: mongodb://localhost:27017/local
+      uri: mongodb://localhost:27017/local # DB URI
+  batch:
+    job:
+      enabled: false # 애플리케이션 구동과 동시에 배치 작업 방지
       
+# Movie Open Api 관련
 movie:
   openApi:
     trending:
@@ -11,3 +15,4 @@ movie:
     
     
     
+  

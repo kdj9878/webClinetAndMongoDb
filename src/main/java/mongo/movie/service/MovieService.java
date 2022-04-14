@@ -31,14 +31,12 @@ public class MovieService {
 	
 	// 영화 OPEN API에 오늘의 인기 급상승 영화 리스트를 불러오는 메소드
 	public Mono<TrendingMovie[]> getTrendingByDay() {
-		Mono<TrendingObject> trendingObject = wcBuilder.build()    
+		return wcBuilder.build()    
 		        .get()      
 		        .uri(trendingMovieUri + "/trending/movie/day?api_key={apiKey}", apiKey)
 		        .retrieve()
-		        .bodyToMono(TrendingObject.class);
-		
-		return trendingObject
-				.map(fileds -> fileds.getResults());
+		        .bodyToMono(TrendingObject.class)
+		        .map(fileds -> fileds.getResults());
 	}	
 	
 	// 내 로컬 DB에 저장되어 있는 특정 아이디의 트랜딩 영화를 가져오는 메소드
