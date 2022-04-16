@@ -7,6 +7,7 @@ import org.springframework.batch.item.ParseException;
 import org.springframework.batch.item.UnexpectedInputException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.MediaType;
 import org.springframework.web.reactive.function.client.WebClient;
 
@@ -39,8 +40,6 @@ public class OpenApiReader implements ItemReader<Mono<TrendingMovie[]>> {
 	              .bodyToMono(TrendingObject.class)
 	              .map(trendingObject -> trendingObject.getResults())
 	    : null;
-	              
-	              
 	}
 
 }

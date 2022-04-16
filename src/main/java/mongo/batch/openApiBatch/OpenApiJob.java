@@ -31,7 +31,7 @@ public class OpenApiJob {
 	}
 	
 	@Bean
-	@JobScope // 역할 공부하기
+	@JobScope // Job parameter를 사용할 경우 JobScope와 StepScope를 사용해줘야함
 	public Step openApiFristStep() {
 		return stepBuilderFactory.get("openApiFristStep")
 				.<Mono<TrendingMovie[]>, TrendingMovie[]>chunk(1) // Input, Output, chunk 사이즈

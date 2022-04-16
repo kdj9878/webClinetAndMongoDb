@@ -44,15 +44,6 @@ public class JobScheduler {
 //				log.info("...");
 //			}
 //				
-//			log.info("Job Execution: " + jobExecution.getStatus());
-//			log.info("Job getJobConfigurationName: " + jobExecution.getJobConfigurationName());
-//			log.info("Job getJobId: " + jobExecution.getJobId());
-//			log.info("Job getExitStatus: " + jobExecution.getExitStatus());
-//			log.info("Job getJobInstance: " + jobExecution.getJobInstance());
-//			log.info("Job getStepExecutions: " + jobExecution.getStepExecutions());
-//			log.info("Job getLastUpdated: " + jobExecution.getLastUpdated());
-//			log.info("Job getFailureExceptions: " + jobExecution.getFailureExceptions());
-//			
 //		} catch (JobExecutionAlreadyRunningException
 //				|JobRestartException
 //				|JobInstanceAlreadyCompleteException
@@ -61,7 +52,7 @@ public class JobScheduler {
 //		}
 //	}
 	
-	@Scheduled(cron = "0 0/3 * * * ?") // 3분에 1번씩 실행
+	@Scheduled(cron = "0/30 * * * * ?") // 3분에 1번씩 실행
 	public void openApiRequestSchedule() {
 		
 		// 넘기는 파라미터를 매번 다르게 해서 별개의 JobInstance로 인식하게 함

@@ -2,9 +2,11 @@ package mongo.batch.openApiBatch;
 
 import java.util.List;
 
+
 import org.springframework.batch.item.ItemWriter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoOperations;
+import org.springframework.util.StringUtils;
 
 import lombok.extern.slf4j.Slf4j;
 import mongo.movie.domain.TrendingMovie;
